@@ -6,6 +6,7 @@ from apps.endpoints.views import EndpointViewSet
 from apps.endpoints.views import SGAlgorithmViewSet
 from apps.endpoints.views import SGAlgorithmStatusViewSet
 from apps.endpoints.views import SGRequestViewSet
+from apps.endpoints.views import PredictView
 
 router = DefaultRouter(trailing_slash=False)
 router.register(r"endpoints", EndpointViewSet, basename="endpoints")
@@ -15,4 +16,8 @@ router.register(r"sgrequests", SGRequestViewSet, basename="sgrequests")
 
 urlpatterns = [
     url(r"^api/v1/", include(router.urls)),
+    # add predict url
+    url(
+        r"^api/v1/(?P<endpoint_name>.+)/predict$", PredictView.as_view(), name="predict"
+    ),
 ]

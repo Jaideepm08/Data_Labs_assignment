@@ -21,9 +21,8 @@ from apps.sg.sun_glare_algo.sun_glare import SunGlareAlgorithm
 
 try:
     registry = SGRegistry() # create ML registry
-    input_data ={"lat":987}
     # Sun glare algorithm
-    sg = SunGlareAlgorithm(input_data)
+    sg = SunGlareAlgorithm()
     # add to SG registry
     registry.add_algorithm(endpoint_name="sun_glare_algo",
                             algorithm_object=sg,
