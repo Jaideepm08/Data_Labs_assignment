@@ -46,14 +46,14 @@ class SGAlgorithmStatus(models.Model):
         active: The boolean flag which point to currently active status.
         created_by: The name of creator.
         created_at: The date of status creation.
-        parent_mlalgorithm: The reference to corresponding SGAlgorithm.
+        parent_sgalgorithm: The reference to corresponding SGAlgorithm.
 
     '''
     status = models.CharField(max_length=128)
     active = models.BooleanField()
     created_by = models.CharField(max_length=128)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
-    parent_mlalgorithm = models.ForeignKey(SGAlgorithm, on_delete=models.CASCADE, related_name = "status")
+    parent_sgalgorithm = models.ForeignKey(SGAlgorithm, on_delete=models.CASCADE, related_name = "status")
 
 class SGRequest(models.Model):
     '''
@@ -65,7 +65,7 @@ class SGRequest(models.Model):
         response: The response of the SG algorithm in JSON format.
         feedback: The feedback about the response in JSON format.
         created_at: The date when request was created.
-        parent_mlalgorithm: The reference to MLAlgorithm used to compute response.
+        parent_sgalgorithm: The reference to SGAlgorithm used to compute response.
     '''
     input_data = models.CharField(max_length=10000)
     full_response = models.CharField(max_length=10000)

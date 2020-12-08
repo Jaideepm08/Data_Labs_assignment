@@ -16,7 +16,7 @@ class SGAlgorithmSerializer(serializers.ModelSerializer):
 
     current_status = serializers.SerializerMethodField(read_only=True)
 
-    def get_current_status(self, mlalgorithm):
+    def get_current_status(self, sgalgorithm):
         return SGAlgorithmStatus.objects.filter(parent_sgalgorithm=sgalgorithm).latest('created_at').status
 
     class Meta:
