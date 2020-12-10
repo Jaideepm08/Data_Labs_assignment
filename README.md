@@ -23,12 +23,12 @@ direction of forward- facing camera) is less than 30 degrees AND
 
 The API expects the input to be in the following format and acceptable values for the fields:
 
-```json
+```
 {
-“lat”: 49.2699648,
-“lon”: -123.1290368,
-“epoch”: 1588704959.321,
-“orientation”: -10.2,
+	“lat”: 49.2699648,
+	“lon”: -123.1290368,
+	“epoch”: 1588704959.321,
+	“orientation”: -10.2,
 }
 ```
 
@@ -53,7 +53,7 @@ request_id: Each request is saved in the default sqllite database. This id repre
 
 
 #### Prerequsits to run the API:
-[![Docker]](https://www.docker.com/products/docker-desktop)
+[![Docker](https://img.shields.io/badge/<Docker>-<blue>)](https://www.docker.com/products/docker-desktop)
 
 #### Steps to run the API:
 
