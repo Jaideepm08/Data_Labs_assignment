@@ -1,3 +1,4 @@
+# backend/server/apps/endpoints/views.py file
 import json
 from numpy.random import rand
 from rest_framework import views, status
@@ -7,8 +8,6 @@ from server.wsgi import registry
 
 from django.shortcuts import render
 
-# Create your views here.
-# backend/server/apps/endpoints/views.py file
 from rest_framework import viewsets
 from rest_framework import mixins
 
@@ -73,19 +72,24 @@ class PredictView(views.APIView):
 
         algorithm_status = self.request.query_params.get("status", "production")
         algorithm_version = self.request.query_params.get("version")
-        #SGAlgorithm.objects.filter(id=2).delete()
+        #SGAlgorithm.objects.filter(id=12).delete()
 
         algs = SGAlgorithm.objects.filter(parent_endpoint__name = endpoint_name, status__status = algorithm_status, status__active=True)
+        print('b',algs)
+        algs = [algs.latest('id')]
+        print('a',algs)
 
         if algorithm_version is not None:
             algs = algs.filter(version = algorithm_version)
+            
+
 
         if len(algs) == 0:
             return Response(
                 {"status": "Error", "message": "SG algorithm is not available"},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        print(algs)
+        
         print("len is",len(algs))
         if len(algs) != 1 and algorithm_status != "ab_testing":
            return Response(
@@ -97,6 +101,7 @@ class PredictView(views.APIView):
             alg_index = 0 if rand() < 0.5 else 1
 
         algorithm_object = registry.endpoints[algs[alg_index].id]
+        print(request.data)
         prediction = algorithm_object.predict(request.data)
 
 
