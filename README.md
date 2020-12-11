@@ -47,21 +47,21 @@ The API expects the input to be in the following format and acceptable values fo
     "request_id": 23
 }
 
-glare: True or False depending on the input values. If null there was a problem with payload.
-status: 0: ok, 1: Invalid lat, 2: Invalid lon, 3: Invalid orientation
-request_id: Each request is saved in the default sqllite database. This id represents the request number.
+- glare: True or False depending on the input values. If null there was a problem with payload.
+- status: ```0: ok```, ```1: Invalid lat```, ```2: Invalid lon```, ```3: Invalid orientation```.
+- request_id: Each request is saved in the default sqllite database. This id represents the request number.
 
 
 #### Prerequsits to run the API:
-[![Docker](https://img.shields.io/badge/<Docker>-<blue>)](https://www.docker.com/products/docker-desktop)
+[Docker](https://www.docker.com/products/docker-desktop)
 
 #### Steps to run the API:
 
 1. Go to the root directory of the unzipped folder.
 
-2. From the root directory use the following command in CLI: sudo docker-compose build
+2. From the root directory use the following command in CLI: ```sudo docker-compose build```
 
-3. Once the above step has been processed use: sudo docker-compose up
+3. Once the above step has been processed use: ```sudo docker-compose up```
 
 4. In your choice of browser go to the following address: <http://0.0.0.0:8000/api/v1/sun_glare_algo/predict>
 
@@ -71,7 +71,9 @@ request_id: Each request is saved in the default sqllite database. This id repre
 
 
 References:
-1. [Deploy Machine Learning Models with Django](https://www.deploymachinelearning.com/#introduction)
+1. [Django RESTful Web Services](https://learning.oreilly.com/library/view/django-restful-web/9781788833929/)
+2. [A novel method for predicting and mapping the presence of sun glare using Google Street View](https://arxiv.org/pdf/1808.04436.pdf)
+3. [Deploy Machine Learning Models with Django](https://www.deploymachinelearning.com/#introduction)
 
 
 
