@@ -41,11 +41,12 @@ The API expects the input to be in the following format and acceptable values fo
 
 ###### Response structure:
 
-{
-    "glare": true,
-    "status": 0,
-    "request_id": 23
+```{
+	"glare": true,
+	"status": 0,
+	"request_id": 23
 }
+```
 
 - glare: True or False depending on the input values. If null there was a problem with payload.
 - status: ```0: ok```, ```1: Invalid lat```, ```2: Invalid lon```, ```3: Invalid orientation```.
@@ -70,7 +71,7 @@ The API expects the input to be in the following format and acceptable values fo
 **The source code of the algorithm is present in** ```backend/server/apps/sg/sun_glare_algo/sun_glare.py```
 
 
-References:
+#### References:
 1. [Django RESTful Web Services](https://learning.oreilly.com/library/view/django-restful-web/9781788833929/)
 2. [A novel method for predicting and mapping the presence of sun glare using Google Street View](https://arxiv.org/pdf/1808.04436.pdf)
 3. [Deploy Machine Learning Models with Django](https://www.deploymachinelearning.com/#introduction)
