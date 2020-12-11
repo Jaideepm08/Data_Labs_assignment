@@ -3,8 +3,7 @@ Data Labs Assignment
 
 #### Glare detection from image metadata
 
-To detect whether an image has glare or not using computer vision on high resolution images is very computationaly expensive when you are dealing with thousands of images.
-To overcome this, we can make use of the image metadata to determine the posibilty of it having glare or not.
+To detect whether an image has a glare or not using computer vision on high-resolution images is very computationally expensive when you are dealing with thousands of images. To overcome this, we can make use of the image metadata to determine the possibility of it having glare or not. 
 The metadata contains:
 
 - “lat”: a float between -90 to 90 that shows the latitude in which the image was taken
@@ -51,7 +50,7 @@ The API expects the input to be in the following format and acceptable values fo
 
 - glare: True or False depending on the input values. If null there was a problem with payload.
 - status: ```0: ok```, ```1: Invalid lat```, ```2: Invalid lon```, ```3: Invalid orientation```.
-- request_id: Each request is saved in the default sqllite database. This id represents the request number.
+- request_id: Each request is saved in the default SQLlite database. This id represents the request number.
 
 
 #### Prerequsits to run the API:
