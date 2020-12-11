@@ -41,7 +41,8 @@ The API expects the input to be in the following format and acceptable values fo
 
 ###### Response structure:
 
-```{
+```
+{
 	"glare": true,
 	"status": 0,
 	"request_id": 23
